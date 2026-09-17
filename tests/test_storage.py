@@ -5,8 +5,8 @@ Unit tests for SQLite Audit Storage Manager.
 from pathlib import Path
 import pytest
 
-from visionguard.detector import DetectedDefect, InspectionResult
-from visionguard.storage import AuditStorageManager
+from navdhrishti.detector import DetectedDefect, InspectionResult
+from navdhrishti.storage import AuditStorageManager
 
 
 @pytest.fixture

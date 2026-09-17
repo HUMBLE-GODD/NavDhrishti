@@ -1,4 +1,4 @@
-# Project Statement: VisionGuard
+# Project Statement: NavDhrishti
 
 ## 1. Problem Statement
 In modern precision manufacturing (e.g., semiconductor fabrication, printed circuit board [PCB] assembly, aerospace metallurgy, and automotive sheet-metal production), surface defects such as scratches, structural voids, cracks, micro-pinholes, and chemical contaminations represent major drivers of product failures, economic waste, and safety risks. 
@@ -8,12 +8,12 @@ Traditional visual quality inspection relies heavily on manual human oversight. 
 - **Throughput Limits**: Human inspection cannot scale to high-speed automated assembly lines operating at dozens of components per second.
 - **Lack of Quantitative Traceability**: Manual checks rarely yield auditable, pixel-level statistical metrics (such as exact surface defect area, severity scoring, or real-time database logging).
 
-**VisionGuard** addresses this fundamental industrial challenge by providing an automated, lightweight, edge-compatible Computer Vision inspection system. It combines classical morphological feature extraction (edge gradients, texture descriptors, contour geometry) with machine learning classification to achieve real-time defect localization, severity quantification, and regulatory audit logging on standard commodity hardware without requiring expensive GPU infrastructure.
+**NavDhrishti** addresses this fundamental industrial challenge by providing an automated, lightweight, edge-compatible Computer Vision inspection system. It combines classical morphological feature extraction (edge gradients, texture descriptors, contour geometry) with machine learning classification to achieve real-time defect localization, severity quantification, and regulatory audit logging on standard commodity hardware without requiring expensive GPU infrastructure.
 
 ---
 
 ## 2. Scope of the Project
-The scope of the VisionGuard project encompasses the end-to-end defect inspection lifecycle for industrial flat and textured surfaces:
+The scope of the NavDhrishti project encompasses the end-to-end defect inspection lifecycle for industrial flat and textured surfaces:
 
 - **In-Scope:**
   - **Multi-Type Defect Detection**: Automated identification, localization, and classification of five critical defect categories:

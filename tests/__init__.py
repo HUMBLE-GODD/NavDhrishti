@@ -1,1 +1,1 @@
-"""VisionGuard Test Suite."""
+"""NavDhrishti Test Suite."""

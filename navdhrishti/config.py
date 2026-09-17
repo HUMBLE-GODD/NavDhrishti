@@ -1,5 +1,5 @@
 """
-Configuration settings and constants for VisionGuard inspection pipeline.
+Configuration settings and constants for NavDhrishti inspection pipeline.
 """
 
 from dataclasses import dataclass, field

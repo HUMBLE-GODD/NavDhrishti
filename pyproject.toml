@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "visionguard"
+name = "navdhrishti"
 version = "1.0.0"
-description = "VisionGuard: Automated Industrial Surface Defect & Quality Inspection System by Tatvik Sinha"
+description = "NavDhrishti: Automated Industrial Surface Defect & Quality Inspection System by Tatvik Sinha"
 readme = "README.md"
 authors = [{ name = "Tatvik Sinha" }]
 license = { text = "MIT" }
@@ -27,7 +27,7 @@ test = [
 ]
 
 [project.scripts]
-visionguard = "visionguard.cli:main"
+navdhrishti = "navdhrishti.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

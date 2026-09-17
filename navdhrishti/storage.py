@@ -10,8 +10,8 @@ from pathlib import Path
 import sqlite3
 from typing import Dict, Generator, List, Optional, Union
 
-from visionguard.config import InspectionConfig
-from visionguard.detector import InspectionResult
+from navdhrishti.config import InspectionConfig
+from navdhrishti.detector import InspectionResult
 
 
 class AuditStorageManager:

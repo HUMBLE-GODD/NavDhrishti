@@ -1,5 +1,5 @@
 """
-Command-Line Interface (CLI) for VisionGuard.
+Command-Line Interface (CLI) for NavDhrishti.
 Developed by Tatvik Sinha for VITyarthi Computer Vision Evaluation.
 
 Provides an enterprise-grade terminal UI for dataset generation, model training,
@@ -21,33 +21,33 @@ from rich.rule import Rule
 from rich.table import Table
 from rich.text import Text
 
-from visionguard.config import DEFECT_CLASSES, InspectionConfig
-from visionguard.dataset_generator import IndustrialSurfaceSynthesizer
-from visionguard.detector import DefectDetector
-from visionguard.storage import AuditStorageManager
-from visionguard.visualizer import DefectVisualizer
+from navdhrishti.config import DEFECT_CLASSES, InspectionConfig
+from navdhrishti.dataset_generator import IndustrialSurfaceSynthesizer
+from navdhrishti.detector import DefectDetector
+from navdhrishti.storage import AuditStorageManager
+from navdhrishti.visualizer import DefectVisualizer
 
 
 console = Console()
 
 BANNER_ART = r"""
- ██╗   ██╗██╗███████╗██╗ ██████╗ ███╗   ██╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ 
- ██║   ██║██║██╔════╝██║██╔═══██╗████╗  ██║██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗
- ██║   ██║██║███████╗██║██║   ██║██╔██╗ ██║██║  ███╗██║   ██║███████║██████╔╝██║  ██║
- ╚██╗ ██╔╝██║╚════██║██║██║   ██║██║╚██╗██║██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║
-  ╚████╔╝ ██║███████║██║╚██████╔╝██║ ╚████║╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝
-   ╚═══╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+ ███╗   ██╗ █████╗ ██╗   ██╗██████╗ ██╗  ██╗██████╗ ██╗███████╗██╗  ██╗████████╗██╗
+ ████╗  ██║██╔══██╗██║   ██║██╔══██╗██║  ██║██╔══██╗██║██╔════╝██║  ██║╚══██╔══╝██║
+ ██╔██╗ ██║███████║██║   ██║██║  ██║███████║██████╔╝██║███████╗███████║   ██║   ██║
+ ██║╚██╗██║██╔══██║╚██╗ ██╔╝██║  ██║██╔══██║██╔══██╗██║╚════██║██╔══██║   ██║   ██║
+ ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║██║███████║██║  ██║   ██║   ██║
+ ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝
 """
 
 
 def print_branding(title: str) -> None:
-    """Render signature VisionGuard banner with Tatvik Sinha branding."""
+    """Render signature NavDhrishti banner with Tatvik Sinha branding."""
     banner_text = Text(BANNER_ART, style="bold cyan")
     console.print(Align.center(banner_text))
     console.print(
         Align.center(
             Text.assemble(
-                ("VisionGuard: Intelligent Industrial Defect Inspection System", "bold white"),
+                ("NavDhrishti: Intelligent Industrial Defect Inspection System", "bold white"),
                 ("  |  ", "dim"),
                 ("Author: Tatvik Sinha", "bold yellow"),
                 ("  |  ", "dim"),
@@ -354,7 +354,7 @@ def cmd_benchmark(args: argparse.Namespace, config: InspectionConfig) -> None:
     p95_ms = float(np.percentile(latencies, 95))
     fps = 1000.0 / avg_ms
 
-    table = Table(title="VisionGuard Laptop Performance Benchmark", show_header=True, header_style="bold green", border_style="cyan")
+    table = Table(title="NavDhrishti Laptop Performance Benchmark", show_header=True, header_style="bold green", border_style="cyan")
     table.add_column("Evaluation Metric", justify="left")
     table.add_column("Measured Performance", justify="right", style="bold")
 
@@ -418,8 +418,8 @@ def main() -> None:
     config.ensure_directories()
 
     parser = argparse.ArgumentParser(
-        prog="visionguard",
-        description="VisionGuard: Industrial Surface Defect & Quality Inspection CLI by Tatvik Sinha",
+        prog="navdhrishti",
+        description="NavDhrishti: Industrial Surface Defect & Quality Inspection CLI by Tatvik Sinha",
     )
     subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
 

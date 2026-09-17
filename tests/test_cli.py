@@ -1,14 +1,14 @@
 """
-Integration and CLI command tests for VisionGuard.
+Integration and CLI command tests for NavDhrishti.
 """
 
 from pathlib import Path
 import pytest
 
-from visionguard.config import InspectionConfig
-from visionguard.dataset_generator import IndustrialSurfaceSynthesizer
-from visionguard.detector import DefectDetector
-from visionguard.storage import AuditStorageManager
+from navdhrishti.config import InspectionConfig
+from navdhrishti.dataset_generator import IndustrialSurfaceSynthesizer
+from navdhrishti.detector import DefectDetector
+from navdhrishti.storage import AuditStorageManager
 
 
 def test_cli_sample_generation_and_inspection(tmp_path: Path) -> None:

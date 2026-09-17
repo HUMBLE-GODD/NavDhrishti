@@ -13,9 +13,9 @@ import joblib
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
-from visionguard.config import DEFECT_CLASSES, InspectionConfig
-from visionguard.feature_extractor import DefectFeatureExtractor
-from visionguard.preprocessor import ImagePreprocessor
+from navdhrishti.config import DEFECT_CLASSES, InspectionConfig
+from navdhrishti.feature_extractor import DefectFeatureExtractor
+from navdhrishti.preprocessor import ImagePreprocessor
 
 
 @dataclass

@@ -8,7 +8,7 @@ from typing import Dict, Optional, Tuple, Union
 import cv2
 import numpy as np
 
-from visionguard.config import InspectionConfig
+from navdhrishti.config import InspectionConfig
 
 
 class ImagePreprocessor:

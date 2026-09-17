@@ -11,8 +11,8 @@ matplotlib.use("Agg")  # Non-interactive backend for headless terminal execution
 import matplotlib.pyplot as plt
 import numpy as np
 
-from visionguard.config import DEFECT_COLORS, InspectionConfig
-from visionguard.detector import InspectionResult
+from navdhrishti.config import DEFECT_COLORS, InspectionConfig
+from navdhrishti.detector import InspectionResult
 
 
 class DefectVisualizer:
@@ -116,7 +116,7 @@ class DefectVisualizer:
         path.parent.mkdir(parents=True, exist_ok=True)
 
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.5), dpi=150)
-        fig.suptitle("VisionGuard Quality Analytics & Telemetry", fontsize=14, fontweight="bold")
+        fig.suptitle("NavDhrishti Quality Analytics & Telemetry", fontsize=14, fontweight="bold")
 
         # Panel 1: Defect Distribution
         defects = stats.get("defect_breakdown", {})

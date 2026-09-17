@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 import pytest
 
-from visionguard.feature_extractor import DefectFeatureExtractor
+from navdhrishti.feature_extractor import DefectFeatureExtractor
 
 
 @pytest.fixture
@@ -40,14 +40,12 @@ def test_extract_contour_features(feature_extractor: DefectFeatureExtractor) -> 
 
     feats = feature_extractor.extract_contour_features(contours[0], img, mask)
 
-    # Circularity of a circle should be close to 1.0 (typical pixelated is ~0.85-0.95)
     assert feats["circularity"] > 0.70
     assert feats["area"] > 500
     assert feats["aspect_ratio"] == pytest.approx(1.0, abs=0.2)
     assert "hu_moment_1" in feats
     assert "glcm_contrast" in feats
 
-    # Test conversion to vector
     vec = feature_extractor.vector_from_dict(feats)
     assert len(vec) == len(DefectFeatureExtractor.FEATURE_NAMES)
     assert all(isinstance(v, (int, float)) for v in vec)

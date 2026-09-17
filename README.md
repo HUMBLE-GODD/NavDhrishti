@@ -1,4 +1,4 @@
-# VisionGuard: Automated Industrial Surface Defect & Quality Inspection System
+# NavDhrishti: Automated Industrial Surface Defect & Quality Inspection System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python: 3.9+](https://img.shields.io/badge/Python-3.9%2B-brightgreen.svg)](https://python.org)
@@ -11,21 +11,21 @@
 > **Repository Mode:** CLI-First, Non-GUI, Edge-Compatible Architecture  
 
 ```
- ██╗   ██╗██╗███████╗██╗ ██████╗ ███╗   ██╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ 
- ██║   ██║██║██╔════╝██║██╔═══██╗████╗  ██║██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗
- ██║   ██║██║███████╗██║██║   ██║██╔██╗ ██║██║  ███╗██║   ██║███████║██████╔╝██║  ██║
- ╚██╗ ██╔╝██║╚════██║██║██║   ██║██║╚██╗██║██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║
-  ╚████╔╝ ██║███████║██║╚██████╔╝██║ ╚████║╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝
-   ╚═══╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+ ███╗   ██╗ █████╗ ██╗   ██╗██████╗ ██╗  ██╗██████╗ ██╗███████╗██╗  ██╗████████╗██╗
+ ████╗  ██║██╔══██╗██║   ██║██╔══██╗██║  ██║██╔══██╗██║██╔════╝██║  ██║╚══██╔══╝██║
+ ██╔██╗ ██║███████║██║   ██║██║  ██║███████║██████╔╝██║███████╗███████║   ██║   ██║
+ ██║╚██╗██║██╔══██║╚██╗ ██╔╝██║  ██║██╔══██║██╔══██╗██║╚════██║██╔══██║   ██║   ██║
+ ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║██║███████║██║  ██║   ██║   ██║
+ ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝
 ```
 
 ---
 
 ## 1. Project Overview
 
-**VisionGuard** is an automated, edge-compatible Computer Vision system developed by **Tatvik Sinha** to detect, localize, and classify surface defects on manufacturing substrates (semiconductors, metals, and PCBs). 
+**NavDhrishti** is an automated, edge-compatible Computer Vision system developed by **Tatvik Sinha** to detect, localize, and classify surface defects on manufacturing substrates (semiconductors, metals, and PCBs). 
 
-Engineered specifically to run efficiently on standard laptop CPUs without requiring expensive GPU clusters or cloud dependencies, VisionGuard unites classical computer vision transforms (CLAHE illumination flattening, bilateral filtering, Canny edge gradients, Hu moment invariants, and GLCM texture descriptors) with a machine learning classification engine and continuous **0–100 Defect Severity Scoring**.
+Engineered specifically to run efficiently on standard laptop CPUs without requiring expensive GPU clusters or cloud dependencies, NavDhrishti unites classical computer vision transforms (CLAHE illumination flattening, bilateral filtering, Canny edge gradients, Hu moment invariants, and GLCM texture descriptors) with a machine learning classification engine and continuous **0–100 Defect Severity Scoring**.
 
 The system features an enterprise SQLite relational audit trail adhering to ISO 9001 quality traceability and provides a non-GUI, non-interactive Command-Line Interface (CLI) for immediate integration into automated production lines.
 
@@ -54,7 +54,7 @@ The system features an enterprise SQLite relational audit trail adhering to ISO 
 
 ## 3. Technologies & Libraries Used
 
-| Technology / Library | Purpose in VisionGuard |
+| Technology / Library | Purpose in NavDhrishti |
 | :--- | :--- |
 | **Python 3.9+** | Core programming language |
 | **OpenCV (`opencv-python-headless`)** | CLAHE, bilateral filtering, Canny edges, morphological kernels, contours |
@@ -94,7 +94,7 @@ vityarthi/
 ├── requirements.txt               # Lightweight dependencies
 ├── pyproject.toml                 # Package metadata and test configurations
 ├── generate_report.py             # 15-section PDF academic report compiler
-├── visionguard/                   # Core Python Computer Vision Package
+├── navdhrishti/                   # Core Python Computer Vision Package
 │   ├── __init__.py                # Package metadata & author attribution
 │   ├── config.py                  # Hyperparameters, thresholds, and paths
 │   ├── preprocessor.py            # CLAHE, bilateral filtering, illumination correction
@@ -116,7 +116,7 @@ vityarthi/
 │   ├── classifier_weights.joblib  # Trained model weights
 │   └── audit_inspection.db        # SQLite inspection audit trail
 └── reports/                       # Generated documentation artifacts
-    ├── VisionGuard_Project_Report.pdf  # 9-page 15-section official report
+    ├── NavDhrishti_Project_Report.pdf  # 9-page 15-section official report
     ├── audit_analytics_dashboard.png   # Matplotlib telemetry chart
     └── diagrams/                       # High-resolution architectural & UML diagrams
 ```
@@ -125,12 +125,12 @@ vityarthi/
 
 ## 6. Installation & Quickstart
 
-VisionGuard is designed to be set up on any standard laptop (macOS, Linux, or Windows) in under 2 minutes without GPU hardware.
+NavDhrishti is designed to be set up on any standard laptop (macOS, Linux, or Windows) in under 2 minutes without GPU hardware.
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/tatviksinha/visionguard.git
-cd visionguard
+git clone https://github.com/tatviksinha/navdhrishti.git
+cd navdhrishti
 ```
 
 ### Step 2: Create and Activate Virtual Environment
@@ -153,19 +153,19 @@ pip install -r requirements.txt
 
 ## 7. Command-Line Interface (CLI) Usage
 
-VisionGuard is **100% executable from the terminal** without any GUI dependencies.
+NavDhrishti is **100% executable from the terminal** without any GUI dependencies.
 
 ### 1. Synthesize Procedural Benchmark Surfaces
 Generate realistic industrial substrates (brushed metal, silicon, PCB) with injected defects:
 ```bash
-python -m visionguard.cli generate-samples --count 4
+python -m navdhrishti.cli generate-samples --count 4
 ```
 *Creates 24 benchmark images with ground-truth masks in `data/samples/`.*
 
 ### 2. Train the Feature Classifier
 Train the Random Forest classifier on extracted morphological, edge, and texture features:
 ```bash
-python -m visionguard.cli train --samples 30
+python -m navdhrishti.cli train --samples 30
 ```
 *Extracts 15-D feature vectors across classes and persists weights to `data/classifier_weights.joblib`.*
 
@@ -173,28 +173,28 @@ python -m visionguard.cli train --samples 30
 Run real-time defect inspection with color-coded terminal output and save the visual overlay:
 ```bash
 # Inspect a defective part
-python -m visionguard.cli inspect --input data/samples/defect_scratch_01.png --save-visual --log-db
+python -m navdhrishti.cli inspect --input data/samples/defect_scratch_01.png --save-visual --log-db
 
 # Inspect a pristine defect-free part
-python -m visionguard.cli inspect --input data/samples/pristine_01.png --save-visual --log-db
+python -m navdhrishti.cli inspect --input data/samples/pristine_01.png --save-visual --log-db
 ```
 
 ### 4. Run Batch Inspection Line
 Inspect an entire folder of manufacturing parts and compute automated throughput metrics:
 ```bash
-python -m visionguard.cli batch --input-dir data/samples/ --log-db
+python -m navdhrishti.cli batch --input-dir data/samples/ --log-db
 ```
 
 ### 5. Run Hardware Performance Benchmark
 Evaluate classification accuracy, defect detection precision/recall, and frame rate (FPS) on CPU:
 ```bash
-python -m visionguard.cli benchmark --samples 20
+python -m navdhrishti.cli benchmark --samples 20
 ```
 
 ### 6. View SQLite Audit History & Export Telemetry
 Query inspection history from the SQLite database and export a telemetry dashboard:
 ```bash
-python -m visionguard.cli audit-log --limit 5 --export-chart
+python -m navdhrishti.cli audit-log --limit 5 --export-chart
 ```
 
 ### 7. Compile the 15-Section Academic PDF Report
@@ -202,13 +202,13 @@ Compile the official project report with embedded architecture and UML diagrams:
 ```bash
 python generate_report.py
 ```
-*Outputs: `reports/VisionGuard_Project_Report.pdf`*
+*Outputs: `reports/NavDhrishti_Project_Report.pdf`*
 
 ---
 
 ## 8. Running the Test Suite
 
-VisionGuard includes a complete automated test suite built with `pytest` covering all modules:
+NavDhrishti includes a complete automated test suite built with `pytest` covering all modules:
 
 ```bash
 # Run all tests with verbose output
@@ -257,7 +257,7 @@ tests/test_storage.py::test_log_and_query_inspection PASSED              [100%]
 - [x] **Root README.md**: Complete zero-context installation, execution, and testing guide.
 - [x] **Root statement.md**: Problem statement, scope, target users, and features documented.
 - [x] **CLI-First Executability**: Fully executable from the terminal without GUI requirements.
-- [x] **Minimum 5–10 Modules**: Contains 8 modular Python files in `visionguard/`.
+- [x] **Minimum 5–10 Modules**: Contains 8 modular Python files in `navdhrishti/`.
 - [x] **Non-Functional Requirements**: Performance, Usability, Reliability, Maintainability, Resource Efficiency, and Auditability implemented.
 - [x] **Database & ER Diagram**: SQLite storage layer with master-detail schema and ER diagram.
 - [x] **15-Section Project Report**: Complete 9-page PDF report compiled and ready to upload on the portal.

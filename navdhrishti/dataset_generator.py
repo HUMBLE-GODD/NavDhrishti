@@ -11,7 +11,7 @@ from typing import Dict, List, Optional, Tuple
 import cv2
 import numpy as np
 
-from visionguard.config import DEFECT_CLASSES, InspectionConfig
+from navdhrishti.config import DEFECT_CLASSES, InspectionConfig
 
 
 class IndustrialSurfaceSynthesizer:

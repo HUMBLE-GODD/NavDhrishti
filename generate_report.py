@@ -1,5 +1,5 @@
 """
-Automated 15-Section Academic Project Report Generator for VisionGuard.
+Automated 15-Section Academic Project Report Generator for NavDhrishti.
 Developed by Tatvik Sinha for VITyarthi Computer Vision Evaluation.
 
 Generates diagrams (System Architecture, Workflow, Use Case, Sequence, Class, ER Diagram)
@@ -44,7 +44,6 @@ def create_diagrams(output_dir: Path) -> dict:
     ax.set_ylim(0, 5)
     ax.axis("off")
 
-    # Layer boxes
     colors_arch = ["#2c3e50", "#2980b9", "#27ae60", "#d35400", "#8e44ad"]
     boxes = [
         ("Layer 1: Ingestion & Simulation\n(Raw Images, Camera Feed, Procedural Synthesizer)", 0.5, 3.8, 9, 0.8, colors_arch[0]),
@@ -110,15 +109,15 @@ def create_diagrams(output_dir: Path) -> dict:
     # Boundary Box
     sys_rect = patches.Rectangle((2.8, 0.4), 6.8, 5.2, fill=False, edgecolor="#7f8c8d", linestyle="--", lw=1.5)
     ax.add_patch(sys_rect)
-    ax.text(6.2, 5.3, "VisionGuard Inspection Subsystem", ha="center", fontsize=9.5, fontweight="bold", color="#2c3e50")
+    ax.text(6.2, 5.3, "NavDhrishti Inspection Subsystem", ha="center", fontsize=9.5, fontweight="bold", color="#2c3e50")
 
     # Actor
-    ax.plot([1.2, 1.2], [3.3, 2.7], color="#2980b9", lw=2)  # Body
-    circle = plt.Circle((1.2, 3.6), 0.25, color="#2980b9", ec="#1c5980", lw=1.5)  # Head
+    ax.plot([1.2, 1.2], [3.3, 2.7], color="#2980b9", lw=2)
+    circle = plt.Circle((1.2, 3.6), 0.25, color="#2980b9", ec="#1c5980", lw=1.5)
     ax.add_patch(circle)
-    ax.plot([0.8, 1.6], [3.1, 3.1], color="#2980b9", lw=2)  # Arms
-    ax.plot([1.2, 0.9], [2.7, 2.2], color="#2980b9", lw=2)  # Left leg
-    ax.plot([1.2, 1.5], [2.7, 2.2], color="#2980b9", lw=2)  # Right leg
+    ax.plot([0.8, 1.6], [3.1, 3.1], color="#2980b9", lw=2)
+    ax.plot([1.2, 0.9], [2.7, 2.2], color="#2980b9", lw=2)
+    ax.plot([1.2, 1.5], [2.7, 2.2], color="#2980b9", lw=2)
     ax.text(1.2, 1.9, "QA / Line Operator\n(Tatvik Sinha)", ha="center", fontsize=8, fontweight="bold")
 
     # Use cases
@@ -154,7 +153,6 @@ def create_diagrams(output_dir: Path) -> dict:
         ax.text(x, 5.5, name, ha="center", va="center", color="white", fontsize=8, fontweight="bold")
         ax.plot([x, x], [5.2, 0.4], linestyle="--", color="#bdc3c7", lw=1)
 
-    # Messages
     msgs = [
         (1.0, 3.0, 4.7, "inspect --input img.png"),
         (3.0, 5.0, 4.1, "preprocess_pipeline(img)"),
@@ -190,17 +188,14 @@ def create_diagrams(output_dir: Path) -> dict:
         ("DefectVisualizer", 5.5, 0.5, 2.8, 2.0, ["+ render_overlay()", "+ save_annotated_image()", "+ generate_analytics_chart()"]),
     ]
     for title, x, y, w, h, methods in classes:
-        # Header box
         ax.add_patch(patches.Rectangle((x, y + h - 0.45), w, 0.45, fc="#2980b9", ec="#1c5980"))
         ax.text(x + w / 2, y + h - 0.22, title, ha="center", va="center", color="white", fontsize=7.8, fontweight="bold")
-        # Body box
         ax.add_patch(patches.Rectangle((x, y), w, h - 0.45, fc="#f8f9f9", ec="#1c5980"))
         y_text = y + h - 0.7
         for m in methods:
             ax.text(x + 0.1, y_text, m, fontsize=6.8, color="#2c3e50")
             y_text -= 0.32
 
-    # Connectors
     ax.annotate("", xy=(7.0, 4.3), xytext=(6.5, 4.3), arrowprops=dict(arrowstyle="->", color="#34495e", lw=1.2))
     ax.annotate("", xy=(3.7, 4.3), xytext=(3.1, 4.3), arrowprops=dict(arrowstyle="->", color="#34495e", lw=1.2))
     ax.annotate("", xy=(7.5, 2.5), xytext=(7.0, 3.2), arrowprops=dict(arrowstyle="->", color="#34495e", lw=1.2))
@@ -233,7 +228,6 @@ def create_diagrams(output_dir: Path) -> dict:
             ax.text(x + 0.15, curr_y, col, fontsize=6.8, color=color, fontweight=weight)
             curr_y -= 0.32
 
-    # Relationship line
     ax.plot([3.4, 4.0], [3.2, 3.2], color="#e74c3c", lw=2)
     ax.text(3.7, 3.35, "1 : N", ha="center", fontsize=8, fontweight="bold", color="#c0392b")
 
@@ -246,7 +240,7 @@ def create_diagrams(output_dir: Path) -> dict:
     return diagram_paths
 
 
-def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Path:
+def build_pdf_report(pdf_filename: str = "NavDhrishti_Project_Report.pdf") -> Path:
     """Build the official, comprehensive 15-section project report PDF."""
     project_root = Path(__file__).resolve().parent
     reports_dir = project_root / "reports"
@@ -268,7 +262,6 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
 
     styles = getSampleStyleSheet()
 
-    # Custom styles
     style_cover_title = ParagraphStyle(
         "CoverTitle",
         parent=styles["Title"],
@@ -276,7 +269,7 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
         fontSize=26,
         leading=32,
         textColor=colors.HexColor("#1a252f"),
-        alignment=1,  # Center
+        alignment=1,
         spaceAfter=15,
     )
     style_cover_sub = ParagraphStyle(
@@ -329,22 +322,13 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
         textColor=colors.HexColor("#2d3436"),
         spaceAfter=7,
     )
-    style_code = ParagraphStyle(
-        "CodeStyle",
-        parent=styles["Normal"],
-        fontName="Courier",
-        fontSize=8.5,
-        leading=11.5,
-        textColor=colors.HexColor("#1b2631"),
-        spaceAfter=6,
-    )
 
     story = []
 
     # ==================== 1. COVER PAGE ====================
     story.append(Spacer(1, 40))
     story.append(Paragraph("VITyarthi — Build Your Own Project", style_cover_sub))
-    story.append(Paragraph("VisionGuard: Automated Industrial Surface Defect & Quality Inspection System", style_cover_title))
+    story.append(Paragraph("NavDhrishti: Automated Industrial Surface Defect & Quality Inspection System", style_cover_title))
     story.append(Spacer(1, 15))
     story.append(HRFlowable(width="80%", thickness=2, color=colors.HexColor("#2980b9"), spaceAfter=30))
 
@@ -364,13 +348,13 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
         [
             Paragraph(
                 "<b>Executive Abstract:</b><br/>"
-                "VisionGuard is an enterprise-grade Computer Vision system engineered by Tatvik Sinha "
+                "NavDhrishti is an enterprise-grade Computer Vision system engineered by Tatvik Sinha "
                 "to automate surface defect localization and multi-class classification on industrial substrates "
                 "(semiconductors, metals, and PCBs). Designed to run entirely on commodity laptop CPUs without requiring "
                 "GPU infrastructure, the pipeline fuses classical morphological transforms (CLAHE, bilateral denoising, "
                 "Canny edge gradients, Hu moment invariants, and GLCM texture descriptors) with a Random Forest pattern "
                 "classifier and a continuous 0–100 Defect Severity Index. Complete with SQLite relational audit logging and "
-                "an intuitive CLI suite, VisionGuard achieves 98.2% defect localization accuracy and 35+ FPS CPU throughput.",
+                "an intuitive CLI suite, NavDhrishti achieves 98.2% defect localization accuracy and 35+ FPS CPU throughput.",
                 style_body,
             )
         ]
@@ -395,7 +379,7 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
             "Visual surface defect inspection is a cornerstone of modern industrial quality assurance. In high-speed manufacturing "
             "lines producing printed circuit boards, precision metal sheets, and semiconductor wafers, minute microscopic defects "
             "can compromise structural integrity and cause severe product failures. Traditional manual human inspection suffers from "
-            "operator fatigue, cognitive bias, and strict throughput limits. VisionGuard, engineered by Tatvik Sinha, replaces error-prone "
+            "operator fatigue, cognitive bias, and strict throughput limits. NavDhrishti, engineered by Tatvik Sinha, replaces error-prone "
             "manual inspection with a modular, CPU-optimized computer vision pipeline capable of detecting anomalies in under 40 milliseconds.",
             style_body,
         )
@@ -421,7 +405,7 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
     story.append(Paragraph("4. Functional Requirements", style_h1))
     story.append(
         Paragraph(
-            "VisionGuard implements five primary functional modules, exceeding the syllabus requirement of at least 3 modules:",
+            "NavDhrishti implements five primary functional modules, exceeding the syllabus requirement of at least 3 modules:",
             style_body,
         )
     )
@@ -474,7 +458,7 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
     story.append(Paragraph("5. Non-Functional Requirements", style_h1))
     story.append(
         Paragraph(
-            "VisionGuard enforces six non-functional quality standards (exceeding the required minimum of 4):<br/>"
+            "NavDhrishti enforces six non-functional quality standards (exceeding the required minimum of 4):<br/>"
             "• <b>Performance:</b> Inference latency under 50 ms per image (throughput &gt; 25 FPS) on standard CPU.<br/>"
             "• <b>Usability:</b> Comprehensive CLI interface with rich colorized status tables, zero GUI overhead, and help menus.<br/>"
             "• <b>Reliability & Error Handling:</b> Strict input validation preventing crashes from corrupt files, unsupported extensions, or empty inputs.<br/>"
@@ -489,7 +473,7 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
     story.append(Paragraph("6. System Architecture", style_h1))
     story.append(
         Paragraph(
-            "VisionGuard adopts a layered, pipe-and-filter architectural pattern. The layered design isolates ingestion, "
+            "NavDhrishti adopts a layered, pipe-and-filter architectural pattern. The layered design isolates ingestion, "
             "preprocessing, feature engineering, classification, and persistence into distinct, loosely coupled layers:",
             style_body,
         )
@@ -530,7 +514,7 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
             "<b>2. CLAHE for Illumination Robustness:</b> Factory camera illumination exhibits specular glare and vignetting. Standard histogram "
             "equalization over-amplifies background noise; CLAHE caps local contrast gain, elevating subtle scratches without noise blowout.<br/>"
             "<b>3. Hybrid Classical CV + Random Forest Classifier:</b> Relying purely on heuristic thresholds fails on complex textured surfaces, "
-            "while heavy deep neural networks require dedicated GPUs. VisionGuard extracts 15 discriminative features (Hu moments, GLCM, gradients) "
+            "while heavy deep neural networks require dedicated GPUs. NavDhrishti extracts 15 discriminative features (Hu moments, GLCM, gradients) "
             "and classifies them via Random Forest in under 2 milliseconds on CPU.<br/>"
             "<b>4. SQLite for Audit Trails:</b> SQLite requires zero external server setup, runs natively in-process, supports ACID transactions, "
             "and satisfies ISO 9001 regulatory compliance requirements.",
@@ -557,7 +541,7 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
     story.append(Paragraph("10. Experimental Results & Benchmarks", style_h1))
     story.append(
         Paragraph(
-            "VisionGuard was evaluated across 100 synthesized industrial samples (brushed metal, silicon wafer, PCB) "
+            "NavDhrishti was evaluated across 100 synthesized industrial samples (brushed metal, silicon wafer, PCB) "
             "and verified on a standard laptop CPU environment:",
             style_body,
         )
@@ -652,11 +636,10 @@ def build_pdf_report(pdf_filename: str = "VisionGuard_Project_Report.pdf") -> Pa
         )
     )
 
-    # Build document
     doc.build(story)
     return pdf_path
 
 
 if __name__ == "__main__":
     pdf = build_pdf_report()
-    print(f"VisionGuard Project Report PDF successfully created at: {pdf}")
+    print(f"NavDhrishti Project Report PDF successfully created at: {pdf}")

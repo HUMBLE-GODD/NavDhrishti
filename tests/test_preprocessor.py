@@ -7,8 +7,8 @@ import cv2
 import numpy as np
 import pytest
 
-from visionguard.config import InspectionConfig
-from visionguard.preprocessor import ImagePreprocessor
+from navdhrishti.config import InspectionConfig
+from navdhrishti.preprocessor import ImagePreprocessor
 
 
 @pytest.fixture
@@ -42,7 +42,6 @@ def test_apply_clahe(preprocessor: ImagePreprocessor, sample_bgr_image: np.ndarr
     enhanced = preprocessor.apply_clahe(gray)
     assert enhanced.shape == gray.shape
     assert enhanced.dtype == np.uint8
-    # CLAHE should boost contrast of the inner circle
     assert enhanced.std() >= gray.std()
 
 
