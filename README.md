@@ -129,8 +129,8 @@ NavDhrishti is designed to be set up on any standard laptop (macOS, Linux, or Wi
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/tatviksinha/navdhrishti.git
-cd navdhrishti
+git clone https://github.com/HUMBLE-GODD/NavDhrishti.git
+cd NavDhrishti
 ```
 
 ### Step 2: Create and Activate Virtual Environment
@@ -266,6 +266,7 @@ tests/test_storage.py::test_log_and_query_inspection PASSED              [100%]
 
 ## 11. Author & License
 
-- **Developer:** [Tatvik Sinha](https://github.com/tatviksinha)
+- **Developer:** [Tatvik Sinha](https://github.com/HUMBLE-GODD)
+- **GitHub Repository:** [https://github.com/HUMBLE-GODD/NavDhrishti](https://github.com/HUMBLE-GODD/NavDhrishti)
 - **Academic Course:** Computer Vision
 - **License:** Released under the [MIT License](LICENSE).
